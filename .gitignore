@@ -1,6 +1,11 @@
 # macOS
 .DS_Store
 
+# CmdStan build artifacts
+example*/exp2term
+example*/exp3term
+*.hpp
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

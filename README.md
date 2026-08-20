@@ -40,6 +40,8 @@ python -m cmdstanpy.install_cmdstan
 
 Example 1 uses a conjugate model and does not need Stan.
 
+The Stan models are compiled automatically by CmdStanPy the first time a script is run (this takes a minute or two); the compiled executable is placed next to the `.stan` file and reused on subsequent runs.
+
 ## Running
 
 Each script is standalone:
