@@ -5,7 +5,7 @@
 
 
 """
-NPE for preparation of the manuscript. (Compute Canada Version))
+Example 1 (linear regression) with SNPE-B
 Author: Renjie Peng
 Date: 2025-11-26
 """

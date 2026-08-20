@@ -5,7 +5,7 @@
 
 
 """
-Second application for preparation of the manuscript. (Compute Canada Version))
+Example 2 (nonlinear regression, Gaussian errors) with NPE
 Author: Renjie Peng
 Date: 2026-1-19
 """
@@ -27,6 +27,9 @@ from scipy.special import gammaln
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from cmdstanpy import CmdStanModel
+from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).resolve().parent
 
 
 
@@ -370,7 +373,9 @@ stan_data = {
 }
 
 # ---- compile ----
-model = CmdStanModel(stan_file="exp2term.stan")
+model = CmdStanModel(
+    stan_file=str(SCRIPT_DIR / "exp2term.stan")
+)
 
 
 

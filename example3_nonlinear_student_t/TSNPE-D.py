@@ -5,7 +5,7 @@
 
 
 """
-Fourth application for preparation of the manuscript. (Compute Canada Version))
+Example 3 (nonlinear regression, Student-t errors) with TSNPE-D
 Author: Renjie Peng
 Date: 2026-1-19
 """
@@ -30,6 +30,9 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
 from cmdstanpy import CmdStanModel
+from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).resolve().parent
 
 
 
@@ -405,8 +408,7 @@ stan_data = {
 
 # ---- compile ----
 model = CmdStanModel(
-    stan_file="/home/rjpeng/SNPE type method/Fourth-application/NPE/exp2term.stan",
-    exe_file="/home/rjpeng/SNPE type method/Fourth-application/NPE/exp2term",
+    stan_file=str(SCRIPT_DIR / "exp3term.stan")
 )
 
 

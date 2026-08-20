@@ -5,7 +5,7 @@
 
 
 """
-Implementation of the APT method with an example in Bayesian Linear Regression (Compute Canada)
+Example 1 (linear regression) with SNPE-C
 Author: Renjie Peng
 Date: 2025-02-19
 """
@@ -904,7 +904,7 @@ for rnd in range(2,31):
                 theta_val,
                 Y_val,
                 prior_std=ExactPriorStandardized(parameters_mean, parameters_std, m0, M0, a0, b0),
-                num_atoms=20
+                num_atoms=10
             ).item()
         print(f"Epoch {epoch+1}: Train Loss = {epoch_loss:.4f}, Val Loss = {val_loss:.4f}")
         if val_loss < best_val_loss:

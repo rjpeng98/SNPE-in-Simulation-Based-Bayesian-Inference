@@ -5,7 +5,7 @@
 
 
 """
-Check the performance of TSNPE (parameter space, with an example in Bayesian linear regression. (Compute Canada Version))
+Example 1 (linear regression) with TSNPE-P
 Author: Renjie Peng
 Date: 2025-11-04
 """
