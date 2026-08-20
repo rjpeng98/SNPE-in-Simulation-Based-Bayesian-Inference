@@ -784,7 +784,7 @@ np.savetxt(
 # In[32]:
 
 
-# Define atomic APT loss from sbi
+# Atomic APT loss for SNPE-C (Greenberg et al., 2019), implemented independently
 def apt_loss_batch(mdn, thetas_batch, Y_batch, prior_std, num_atoms=10):
     B = thetas_batch.size(0)
     device = thetas_batch.device

@@ -638,7 +638,7 @@ print("Prior density function defined for SNPE-C")
 # In[38]:
 
 
-# Define atomic APT loss from sbi for SNPE-C
+# Atomic APT loss for SNPE-C (Greenberg et al., 2019), implemented independently
 def apt_loss_batch(mdn, thetas_batch, Y_batch, prior_std, num_atoms=10):
     """
     Atomic Proposal APT loss for SNPE-C.
