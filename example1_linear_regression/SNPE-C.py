@@ -18,6 +18,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
+import copy
 
 # Import the MDN from pyknos
 from pyknos.mdn.mdn import MultivariateGaussianMDN
@@ -218,7 +219,7 @@ for epoch in range(1, num_epochs + 1):
     print(f"Epoch {epoch}: Train Loss = {avg_train_loss:.6f}, Val Loss = {val_loss:.6f}")
     if val_loss < best_val_loss:
         best_val_loss = val_loss
-        best_state = mdn.state_dict()
+        best_state = copy.deepcopy(mdn.state_dict())
         patience_counter = 0
     else:
         patience_counter += 1
@@ -784,7 +785,7 @@ np.savetxt(
 # In[32]:
 
 
-# Define atomic APT loss from sbi
+# Atomic APT loss for SNPE-C (Greenberg et al., 2019), implemented independently
 def apt_loss_batch(mdn, thetas_batch, Y_batch, prior_std, num_atoms=10):
     B = thetas_batch.size(0)
     device = thetas_batch.device
@@ -909,7 +910,7 @@ for rnd in range(2,31):
         print(f"Epoch {epoch+1}: Train Loss = {epoch_loss:.4f}, Val Loss = {val_loss:.4f}")
         if val_loss < best_val_loss:
             best_val_loss = val_loss
-            best_state = mdn.state_dict()
+            best_state = copy.deepcopy(mdn.state_dict())
             patience_counter = 0
         else:
             patience_counter += 1

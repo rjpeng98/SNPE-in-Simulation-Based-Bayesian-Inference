@@ -792,7 +792,7 @@ for rnd in range(2, 31):
         
         if val_loss < best_val_loss:
             best_val_loss = val_loss
-            best_state = mdn.state_dict()
+            best_state = copy.deepcopy(mdn.state_dict())
             patience_counter = 0
         else:
             patience_counter += 1

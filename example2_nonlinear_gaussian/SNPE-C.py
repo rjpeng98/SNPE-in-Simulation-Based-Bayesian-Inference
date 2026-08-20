@@ -17,6 +17,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
+import copy
 
 # Import the MDN from pyknos
 from pyknos.mdn.mdn import MultivariateGaussianMDN
@@ -292,7 +293,7 @@ for epoch in range(1, num_epochs + 1):
     
     if val_loss < best_val_loss:
         best_val_loss = val_loss
-        best_state = mdn.state_dict()
+        best_state = copy.deepcopy(mdn.state_dict())
         patience_counter = 0
     else:
         patience_counter += 1
@@ -638,7 +639,7 @@ print("Prior density function defined for SNPE-C")
 # In[38]:
 
 
-# Define atomic APT loss from sbi for SNPE-C
+# Atomic APT loss for SNPE-C (Greenberg et al., 2019), implemented independently
 def apt_loss_batch(mdn, thetas_batch, Y_batch, prior_std, num_atoms=10):
     """
     Atomic Proposal APT loss for SNPE-C.
@@ -819,7 +820,7 @@ for rnd in range(2, 31):
         
         if val_loss < best_val_loss:
             best_val_loss = val_loss
-            best_state = mdn.state_dict()
+            best_state = copy.deepcopy(mdn.state_dict())
             patience_counter = 0
         else:
             patience_counter += 1

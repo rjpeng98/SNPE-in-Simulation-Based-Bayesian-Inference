@@ -17,6 +17,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
+import copy
 
 # Import the MDN from pyknos
 from pyknos.mdn.mdn import MultivariateGaussianMDN
@@ -306,7 +307,7 @@ for epoch in range(1, num_epochs + 1):
 
     if val_loss < best_val_loss:
         best_val_loss = val_loss
-        best_state = mdn.state_dict()
+        best_state = copy.deepcopy(mdn.state_dict())
         patience_counter = 0
     else:
         patience_counter += 1
@@ -773,7 +774,7 @@ for rnd in range(2, 31):
 
         if val_loss < best_val_loss:
             best_val_loss = val_loss
-            best_state = mdn.state_dict()
+            best_state = copy.deepcopy(mdn.state_dict())
             patience_counter = 0
         else:
             patience_counter += 1
