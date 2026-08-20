@@ -56,3 +56,7 @@ Stan model files are resolved relative to the script location, so the scripts ca
 ## Author
 
 Renjie Peng
+
+## License
+
+This repository is released under the [MIT License](LICENSE).
