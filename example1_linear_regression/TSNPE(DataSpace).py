@@ -696,7 +696,7 @@ all_Y = [Y_sim]
 
 
 for rnd in range(2, 31):
-    optimizer = torch.optim.Adam(mdn.parameters(), lr=1e-4)  #Re-init optimizer
+    optimizer = torch.optim.Adam(mdn.parameters(), lr=5e-4)  #Re-init optimizer
     print(f"\n=== Round {rnd} ===")
 
     with torch.no_grad():
