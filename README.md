@@ -24,18 +24,6 @@ Methods in each directory:
 
 Examples 2 and 3 additionally contain the Stan models (`exp2term.stan`, `exp3term.stan`) used to obtain reference MCMC posteriors.
 
-## Experiment settings
-
-| Setting | Example 1 | Example 2 | Example 3 |
-|---|---|---|---|
-| Simulations per round | 5000 | 5000 | 5000 |
-| Rounds | 30 | 30 | 30 |
-| MDN mixture components | 5 | 6 | 6 |
-| SNPE-C atoms | 10 | 5 | 5 |
-| TSNPE-P truncation mass | 0.999 | 0.999 | 0.999 |
-| TSNPE-D score-threshold mass | 0.999 | 0.9 | 0.9 |
-| Student-t degrees of freedom | — | — | 3 |
-
 ## Installation
 
 Python 3.9+ is recommended.
